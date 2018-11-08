@@ -9,7 +9,7 @@ using namespace std;
 template<typename KEY, typename VALUE>
 struct Leaf
 {
-    Leaf() {left_ = nullptr; right_ = nullptr; };
+    Leaf() {left_ = nullptr; right_ = nullptr; up_ = nullptr; };
     Leaf(const KEY& key, const VALUE& value, Leaf* left = nullptr, Leaf* right = nullptr, Leaf* up = nullptr) 
         : key_(key), value_(value), left_(left), right_(right), up_(up) {};
     ~Leaf() = default;
