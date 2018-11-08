@@ -4,27 +4,39 @@
 int main()
 {
     string trash;
-    GreatDeku<unsigned long> newDeku;
-    newDeku.insert(15);
-    newDeku.insert(1);
-    newDeku.insert(5);
-    newDeku.insert(17);
-    newDeku.insert(200);
-    newDeku.insert(2000);
-    newDeku.insert(2);
-    newDeku.insert(42);
-    newDeku.insert(67);
-    newDeku.insert(29);
-    newDeku.insert(37);
+    GreatDeku<unsigned long, string> newDeku;
+    newDeku.insert(3,"three");
+    newDeku.insert(5,"five");
+    newDeku.insert(1,"one");
+    newDeku.insert(4,"four");
+    newDeku.insert(2,"two");
+    newDeku.insert(5, "fivve");
+    for (int i = 1; i < 6; ++i)
+        cout << newDeku.find(i)->value_ << endl;
+    cout << "Print:\n";
     newDeku.printInOrder();
-    newDeku.prettyPrint();
-    cout << "Size: " << newDeku.getSize() << endl;
-    cout << endl << endl;
-    newDeku.erase(42);
-    newDeku.erase(15);
-    cout << "newDeku after erasing 42: " << endl;
+
+    if (newDeku.find(6) == nullptr)
+        cout << "Key 6 not found" << endl;
+
+    cout << "Erase newDeku at 3:\n";
+    newDeku.erase(3);
     newDeku.printInOrder();
-    cout << "Size: " << newDeku.getSize() << endl;
-    cout << endl << endl;
+
+    cout << "Erase newDeku at 4:\n";
+    newDeku.erase(4);
+    newDeku.printInOrder();
+
+    cout << "Erase newDeku at 5:\n";
+    newDeku.erase(5);
+    newDeku.printInOrder();
+
+    cout << "Erase newDeku at 1:\n";
+    newDeku.erase(1);
+    newDeku.printInOrder();
+
+    cout << "Erase newDeku at 2:\n";
+    newDeku.erase(2);
+    newDeku.printInOrder();
     return 0;
 }
